@@ -1,4 +1,8 @@
 <!DOCTYPE html><html class="dark" lang="en"><head>
+<script>
+// ROUTE_GUARD_INJECTED
+(function(){const d=localStorage.getItem('onboarding_data');if(!d)window.location.replace('/login.html');else{try{const j=JSON.parse(d);if(!j.name||!j.phone)window.location.replace('/login.html');}catch(e){window.location.replace('/login.html');}}})();
+</script>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Onboarding Step 3: Topics &amp; Voice Sample</title>
