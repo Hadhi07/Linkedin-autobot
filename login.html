@@ -1,65 +1,91 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Login - High-Ticket AI Intelligence</title>
-<link href="input.css" rel="stylesheet"/>
+<title>Authenticate - High-Ticket AI Intelligence</title>
+<link href="./input.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
 <style>
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     body {
         background-color: #0e0e0e;
         color: #e5e2e1;
         font-family: 'Manrope', sans-serif;
         min-height: max(884px, 100dvh);
     }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active{
+        -webkit-box-shadow: 0 0 0 30px #1a1a1a inset !important;
+        -webkit-text-fill-color: white !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
 </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center relative p-6">
-<div class="fixed top-0 right-0 -z-10 w-1/2 h-full opacity-10 pointer-events-none">
-<div class="absolute inset-0 bg-gradient-to-l from-primary-container/20 to-transparent"></div>
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXNvJCO4Dvry3Y_ABfG_WijQ_DiQEo9Jfq3MIWpc_HepLo4-dD1trvCNqhOD4oCqs573tvDVt629a3Aq17O0f12bUTh39gtSRT6LEIxEjX5tnaOWFqO9zcK4Z261WWFkvPophZpDDgMz7PLrlzI4Shfu2DAhQ5QJkTEhoelbeYSPOUndyLBUvrGhpw1UdLkMTsA_fYa5Vw-XFNBW1kfgkgdEOllptapO0XgbWBxPH-4CMQAdQa8evcBHSPdFyml-5wbOLDXElQGZRq"/>
+<body class="min-h-screen flex flex-col items-center justify-center relative p-6 overflow-hidden">
+<div class="fixed top-0 right-0 -z-10 w-full h-full opacity-20 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-primary-container/30"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px]"></div>
+    <div class="absolute top-20 right-20 w-80 h-80 bg-primary-container/10 rounded-full blur-[100px]"></div>
 </div>
 
-<div class="w-full max-w-md space-y-8 bg-[#131313]/90 backdrop-blur-md p-10 rounded-2xl border border-outline-variant/20 shadow-2xl">
-    <div class="text-center">
-        <h2 class="font-headline text-4xl text-white mb-2">Welcome</h2>
-        <p class="text-on-surface-variant">Log in to your AI Architect session</p>
-    </div>
+<main class="w-full max-w-[420px] bg-[#111111]/80 backdrop-blur-2xl rounded-[2.5rem] p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8),0_0_80px_rgba(0,255,136,0.07)] border border-white/5 relative z-10 transform scale-100 animate-fade-in transition-all">
     
-    <div class="space-y-6">
-        <div class="space-y-2">
-            <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Full Name</label>
-            <input class="w-full bg-surface-container-lowest border border-outline-variant/10 focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim/20 rounded-lg py-4 px-5 text-on-surface transition-all outline-none" placeholder="Enter your full name" type="text" id="loginName"/>
+    <!-- Header -->
+    <div class="text-center mb-10">
+        <div class="mx-auto w-16 h-16 bg-gradient-to-br from-primary-container to-secondary-container rounded-3xl flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(0,255,136,0.3)]">
+            <span class="material-symbols-outlined text-black text-3xl">fingerprint</span>
         </div>
-        <div class="space-y-2">
-            <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Phone / WhatsApp</label>
-            <input class="w-full bg-surface-container-lowest border border-outline-variant/10 focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim/20 rounded-lg py-4 px-5 text-on-surface transition-all outline-none" placeholder="e.g. +1 234 567 8900" type="text" id="loginPhone"/>
-        </div>
-        <button onclick="saveLoginAndProceed()" class="group w-full bg-primary-container text-on-primary py-4 px-8 rounded-lg font-bold text-lg flex items-center justify-center gap-3 shadow-[0_20px_40px_-12px_rgba(0,255,136,0.3)] hover:glow-[#00e479]/20 transition-all duration-300 mt-4">
-            Login
-            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">login</span>
-        </button>
+        <h1 class="text-3xl font-extrabold font-headline bg-gradient-to-br from-white to-[#a0a0a0] bg-clip-text text-transparent transform tracking-tight">Access Node</h1>
+        <p class="text-on-surface-variant mt-3 text-sm font-medium tracking-wide">Provide your credentials to enter the workspace.</p>
     </div>
-</div>
+
+    <!-- Form -->
+    <form id="loginForm" class="space-y-6">
+        <div class="space-y-2">
+            <label class="text-xs uppercase tracking-widest text-[#a0a0a0] font-bold ml-2">Full Name</label>
+            <div class="relative group">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#a0a0a0] group-focus-within:text-primary-container transition-colors">person</span>
+                <input id="userName" required class="w-full bg-[#1a1a1a] border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-[#555] focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/50 transition-all font-medium" placeholder="Enter your full name" type="text"/>
+            </div>
+        </div>
+
+        <div class="space-y-2">
+            <label class="text-xs uppercase tracking-widest text-[#a0a0a0] font-bold ml-2">WhatsApp Number</label>
+            <div class="relative group">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#a0a0a0] group-focus-within:text-primary-container transition-colors">phone_iphone</span>
+                <input id="userPhone" required class="w-full bg-[#1a1a1a] border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-[#555] focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/50 transition-all font-medium" placeholder="+1 (555) 000-0000" type="tel"/>
+            </div>
+        </div>
+
+        <button class="w-full py-4 mt-8 bg-white text-black rounded-2xl font-bold text-lg hover:bg-primary-container hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+            Initialize
+            <span class="material-symbols-outlined text-xl">arrow_right_alt</span>
+        </button>
+    </form>
+</main>
+
 <script>
-    function saveLoginAndProceed() {
-        const name = document.getElementById('loginName').value;
-        const phone = document.getElementById('loginPhone').value;
-        if (!name || !phone) {
-            alert('Please enter your name and phone number to continue.');
-            return;
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+
+        if (name && phone) {
+            // Save to localStorage
+            const data = {
+                name: name,
+                phone: phone
+            };
+            localStorage.setItem('onboarding_data', JSON.stringify(data));
+            
+            // Redirect to step 1
+            window.location.href = 'step1.html';
         }
-        const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
-        data.name = name;
-        data.phone = phone;
-        localStorage.setItem('onboarding_data', JSON.stringify(data));
-        window.location.href = 'step1.html';
-    }
+    });
 </script>
 </body>
 </html>
