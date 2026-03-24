@@ -1,0 +1,256 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Voice &amp; Tone | High-Ticket AI Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#60ff99",
+              "surface-container-high": "#2a2a2a",
+              "on-surface-variant": "#b9cbb9",
+              "on-secondary-fixed-variant": "#005228",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e0e",
+              "inverse-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "surface-container-highest": "#353534",
+              "primary": "#f1ffef",
+              "surface-bright": "#3a3939",
+              "on-background": "#e5e2e1",
+              "secondary-container": "#027038",
+              "primary-container": "#00ff88",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#9af7b0",
+              "secondary": "#7eda96",
+              "surface": "#131313",
+              "surface-variant": "#353534",
+              "tertiary-fixed-dim": "#e5c364",
+              "on-primary-fixed-variant": "#005228",
+              "primary-fixed-dim": "#00e479",
+              "on-primary-container": "#007139",
+              "outline-variant": "#3b4b3d",
+              "on-secondary-fixed": "#00210c",
+              "tertiary-fixed": "#ffe08d",
+              "on-primary": "#003919",
+              "on-tertiary": "#3d2f00",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "inverse-on-surface": "#313030",
+              "on-secondary": "#003919",
+              "on-secondary-container": "#94f0ab",
+              "surface-container": "#201f1f",
+              "tertiary-container": "#ffdb79",
+              "on-surface": "#e5e2e1",
+              "on-tertiary-fixed-variant": "#584400",
+              "outline": "#849585",
+              "on-tertiary-fixed": "#241a00",
+              "surface-tint": "#00e479",
+              "secondary-fixed-dim": "#7eda96",
+              "surface-container-low": "#1c1b1b",
+              "background": "#131313",
+              "inverse-primary": "#006d37",
+              "on-primary-fixed": "#00210c",
+              "tertiary": "#fffaf7",
+              "on-tertiary-container": "#795f01"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(24px);
+        }
+        body {
+            background-color: #0e0e0e;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation Bar - Unified with SCREEN_26 / SCREEN_3 -->
+<header class="bg-[#131313] docked full-width top-0 z-50 bg-[#0e0e0e] shadow-[0_48px_48px_-12px_rgba(14,14,14,0.6)]">
+<div class="flex items-center justify-between w-full px-6 h-14 max-w-none"><button class="text-[#00ff88] hover:bg-[#2a2a2a] transition-colors duration-300 scale-95 active:scale-90 transition-transform p-2 rounded-full" style="">
+<span class="material-symbols-outlined" style="">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline font-bold text-white tracking-tight text-sm uppercase opacity-60 mb-1" style="">Onboarding</h1>
+<div class="flex items-center gap-1.5">
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-3 rounded-full bg-[#00ff88] shadow-[0_0_8px_rgba(0,255,136,0.6)]"></div>
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-[#00ff88] font-headline font-bold text-xs tracking-wider" style="">STEP 02 OF 4</span>
+</div></div>
+</header>
+<main class="flex-1 flex flex-col px-6 pb-32 max-w-2xl mx-auto w-full pt-6">
+<!-- Progress Section - Unified Style -->
+<!-- Header Section -->
+<section class="mb-12">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-4" style="">How do you sound?</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-md" style="">
+            This is what makes your posts sound like you, not like AI. We’ll use these parameters to calibrate your unique brand frequency.
+        </p>
+</section>
+<!-- Writing Style Bento Grid -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim" style="">Writing style</h3>
+<span class="text-[10px] text-outline uppercase" style="">Select one or more</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="writingStyleGrid">
+<!-- Card 1 -->
+<button class="glass-card group p-6 rounded-xl border border-outline-variant/10 text-left transition-all duration-300 hover:bg-surface-container-high hover:border-primary-container/30" style="">
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block text-3xl group-hover:scale-110 transition-transform" data-icon="work" style="">work</span>
+<h4 class="font-headline text-lg text-white mb-2" style="">Professional</h4>
+<p class="text-xs text-on-surface-variant leading-snug" style="">Authoritative, polished, and industry-standard.</p>
+</button>
+<!-- Card 2 (Reset from active to default) -->
+<button class="glass-card group p-6 rounded-xl border border-outline-variant/10 text-left transition-all duration-300 hover:bg-surface-container-high hover:border-primary-container/30" style="">
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block text-3xl group-hover:scale-110 transition-transform" data-icon="chat" style="">chat</span>
+<h4 class="font-headline text-lg text-white mb-2" style="">Conversational</h4>
+<p class="text-xs text-on-surface-variant leading-snug" style="">Casual, approachable, like talking to a friend.</p>
+</button>
+<!-- Card 3 -->
+<button class="glass-card group p-6 rounded-xl border border-outline-variant/10 text-left transition-all duration-300 hover:bg-surface-container-high hover:border-primary-container/30" style="">
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block text-3xl group-hover:scale-110 transition-transform" data-icon="bolt" style="">bolt</span>
+<h4 class="font-headline text-lg text-white mb-2" style="">Bold &amp; Opinionated</h4>
+<p class="text-xs text-on-surface-variant leading-snug" style="">Direct, provocative, and unapologetic.</p>
+</button>
+<!-- Card 4 -->
+<button class="glass-card group p-6 rounded-xl border border-outline-variant/10 text-left transition-all duration-300 hover:bg-surface-container-high hover:border-primary-container/30" style="">
+<span class="material-symbols-outlined text-primary-fixed-dim mb-4 block text-3xl group-hover:scale-110 transition-transform" data-icon="auto_stories" style="">auto_stories</span>
+<h4 class="font-headline text-lg text-white mb-2" style="">Storytelling</h4>
+<p class="text-xs text-on-surface-variant leading-snug" style="">Narrative-driven, vivid, and immersive.</p>
+</button>
+</div>
+</section>
+<!-- Sentence & Humor Section -->
+<div class="space-y-10 mb-12">
+<!-- Sentence Style -->
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim mb-4" style="">Sentence style</h3>
+<div class="flex flex-wrap gap-3" id="sentenceStyleDiv">
+<button class="px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-bold text-sm transition-all shadow-[0_4px_14px_rgba(0,255,136,0.3)]" style="">Short &amp; Punchy</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10" style="">Mixed</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10" style="">Long &amp; Detailed</button>
+</div>
+</div>
+<!-- Humour -->
+<div>
+<h3 class="text-xs font-bold uppercase tracking-widest text-primary-fixed-dim mb-4" style="">Humour</h3>
+<div class="flex flex-wrap gap-3" id="humorDiv">
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10" style="">Yes</button>
+<button class="px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-bold text-sm transition-all shadow-[0_4px_14px_rgba(0,255,136,0.3)]" style="">Sometimes</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10" style="">Never</button>
+</div>
+</div>
+</div>
+<!-- Input Section -->
+<!-- Vocabulary Selection Removed Per User Request -->
+</section>
+<!-- CTA Section - Unified Style -->
+<div class="mt-16 mb-8">
+<button onclick="saveStep2AndProceed()" class="group w-full md:w-fit md:min-w-[240px] bg-primary-container text-on-primary py-5 px-8 rounded-lg font-bold text-lg flex items-center justify-center gap-3 shadow-[0_20px_40px_-12px_rgba(0,255,136,0.3)] hover:glow-[#00e479]/20 transition-all duration-300" style="">
+            Continue
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Step Indicator (Fixed Center) - Unified with SCREEN_26 / SCREEN_3 -->
+<nav class="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center h-8 px-4 bg-[#0e0e0e]/60 backdrop-blur-xl border border-white/5 rounded-full z-50 shadow-2xl transition-all duration-500 ease-out">
+<div class="flex items-center gap-4">
+<div onclick="window.location.href='step1.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step2.html'" class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_12px_rgba(0,255,136,0.6)] cursor-pointer hover:scale-150 transition-transform"></div>
+<div onclick="window.location.href='step3.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step4.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+</div>
+</nav>
+<script>
+  function setupSingleSelectPills(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const btns = container.querySelectorAll('button');
+    const activeClasses = ['bg-primary-container', 'text-on-primary', 'shadow-[0_4px_14px_rgba(0,255,136,0.3)]'];
+    const inactiveClasses = ['bg-surface-container-high', 'text-on-surface-variant', 'border', 'border-outline-variant/20', 'hover:bg-primary-container/10'];
+    
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => {
+          b.classList.remove(...activeClasses);
+          b.classList.add(...inactiveClasses);
+        });
+        btn.classList.remove(...inactiveClasses);
+        btn.classList.add(...activeClasses);
+      });
+    });
+  }
+
+  function setupWritingStyleGrid() {
+    const container = document.getElementById('writingStyleGrid');
+    if (!container) return;
+    const btns = container.querySelectorAll('button');
+    
+    // Set first as active by default for completely green style
+    if(btns.length > 0) {
+      btns[0].className = 'group p-6 rounded-xl text-left transition-all duration-300 bg-primary-container shadow-[0_4px_20px_rgba(0,255,136,0.4)]';
+      btns[0].querySelector('span').className = 'material-symbols-outlined text-on-primary mb-4 block text-3xl transition-transform';
+      btns[0].querySelector('h4').className = 'font-headline text-lg text-on-primary font-bold mb-2';
+      btns[0].querySelector('p').className = 'text-xs text-on-primary/80 leading-snug';
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => {
+          b.className = 'glass-card group p-6 rounded-xl border border-outline-variant/10 text-left transition-all duration-300 hover:bg-surface-container-high hover:border-primary-container/30';
+          b.querySelector('span').className = 'material-symbols-outlined text-primary-fixed-dim mb-4 block text-3xl group-hover:scale-110 transition-transform';
+          b.querySelector('h4').className = 'font-headline text-lg text-white mb-2';
+          b.querySelector('p').className = 'text-xs text-on-surface-variant leading-snug';
+        });
+        
+        btn.className = 'group p-6 rounded-xl text-left transition-all duration-300 bg-primary-container shadow-[0_4px_20px_rgba(0,255,136,0.4)]';
+        btn.querySelector('span').className = 'material-symbols-outlined text-on-primary mb-4 block text-3xl transition-transform';
+        btn.querySelector('h4').className = 'font-headline text-lg text-on-primary font-bold mb-2';
+        btn.querySelector('p').className = 'text-xs text-on-primary/80 leading-snug';
+      });
+    });
+  }
+
+  setupSingleSelectPills('sentenceStyleDiv');
+  setupSingleSelectPills('humorDiv');
+  setupWritingStyleGrid();
+
+  function saveStep2AndProceed() {
+      const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
+      
+      const activeWritingStyle = document.querySelector('#writingStyleGrid button.bg-primary-container h4');
+      data.writingStyle = activeWritingStyle ? activeWritingStyle.innerText : '';
+      
+      const activeSentenceStyle = document.querySelector('#sentenceStyleDiv button.bg-primary-container');
+      data.sentenceStyle = activeSentenceStyle ? activeSentenceStyle.innerText : '';
+      
+      const activeHumor = document.querySelector('#humorDiv button.bg-primary-container');
+      data.humor = activeHumor ? activeHumor.innerText : '';
+      
+      localStorage.setItem('onboarding_data', JSON.stringify(data));
+      window.location.href = 'step3.html';
+  }
+</script>
+</body></html>

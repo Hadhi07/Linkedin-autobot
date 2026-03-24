@@ -1,0 +1,437 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Onboarding Step 3: Topics &amp; Voice Sample</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#60ff99",
+            "surface-container-high": "#2a2a2a",
+            "on-surface-variant": "#b9cbb9",
+            "on-secondary-fixed-variant": "#005228",
+            "on-error-container": "#ffdad6",
+            "surface-container-lowest": "#0e0e0e",
+            "inverse-surface": "#e5e2e1",
+            "surface-dim": "#131313",
+            "surface-container-highest": "#353534",
+            "primary": "#f1ffef",
+            "surface-bright": "#3a3939",
+            "on-background": "#e5e2e1",
+            "secondary-container": "#027038",
+            "primary-container": "#00ff88",
+            "error": "#ffb4ab",
+            "secondary-fixed": "#9af7b0",
+            "secondary": "#7eda96",
+            "surface": "#131313",
+            "surface-variant": "#353534",
+            "tertiary-fixed-dim": "#e5c364",
+            "on-primary-fixed-variant": "#005228",
+            "primary-fixed-dim": "#00e479",
+            "on-primary-container": "#007139",
+            "outline-variant": "#3b4b3d",
+            "on-secondary-fixed": "#00210c",
+            "tertiary-fixed": "#ffe08d",
+            "on-primary": "#003919",
+            "on-tertiary": "#3d2f00",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "inverse-on-surface": "#313030",
+            "on-secondary": "#003919",
+            "on-secondary-container": "#94f0ab",
+            "surface-container": "#201f1f",
+            "tertiary-container": "#ffdb79",
+            "on-surface": "#e5e2e1",
+            "on-tertiary-fixed-variant": "#584400",
+            "outline": "#849585",
+            "on-tertiary-fixed": "#241a00",
+            "surface-tint": "#00e479",
+            "secondary-fixed-dim": "#7eda96",
+            "surface-container-low": "#1c1b1b",
+            "background": "#131313",
+            "inverse-primary": "#006d37",
+            "on-primary-fixed": "#00210c",
+            "tertiary": "#fffaf7",
+            "on-tertiary-container": "#795f01"
+          },
+          fontFamily: {
+            "headline": ["Epilogue"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(53, 53, 52, 0.4);
+      backdrop-filter: blur(24px);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #0e0e0e;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation Bar - Unified with SCREEN_78 style -->
+<header class="bg-[#131313] docked full-width top-0 z-50 bg-[#0e0e0e] shadow-[0_48px_48px_-12px_rgba(14,14,14,0.6)]">
+<div class="flex items-center justify-between w-full px-6 h-14 max-w-none">
+<button class="text-[#00ff88] hover:bg-[#2a2a2a] transition-colors duration-300 scale-95 active:scale-90 transition-transform p-2 rounded-full" style="">
+<span class="material-symbols-outlined" style="">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline font-bold text-white tracking-tight text-sm uppercase opacity-60 mb-1" style="">Onboarding</h1>
+<div class="flex items-center gap-1.5">
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-3 rounded-full bg-[#00ff88] shadow-[0_0_8px_rgba(0,255,136,0.6)]"></div>
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-[#00ff88] font-headline font-bold text-xs tracking-wider uppercase" style="">Step 03 of 4</span>
+</div>
+</div>
+</header>
+<main class="min-h-screen pb-32 px-6 max-w-4xl mx-auto pt-12">
+<!-- Intro Header -->
+<section class="mb-16">
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface mb-4 leading-none" style="">What do you talk about?</h2>
+<p class="text-on-surface-variant text-lg max-w-xl" style="">Pick your content pillars and give us a sample of your real voice.</p>
+</section>
+<!-- Content Pillars Selection (Bento Style) -->
+<section class="mb-20">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="topicsGrid">
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">leaderboard</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">Leadership<br></span>
+</button>
+<button class="p-6 rounded-xl bg-primary-container text-left shadow-lg shadow-primary-container/10" style="">
+<span class="material-symbols-outlined mb-4 text-on-primary" style="">psychology</span>
+<span class="block font-bold text-on-primary" style="">Tech &amp; AI</span>
+</button>
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">self_improvement</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">Personal&nbsp;<br>brand</span>
+</button>
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">account_balance_wallet</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">Finance</span>
+</button>
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">rocket_launch</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">Business &amp;<br>Startups<br></span>
+</button>
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">business_center</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">My business</span>
+</button>
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">trending_up</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">Marketing &amp; Sales</span>
+</button>
+<button class="p-6 rounded-xl bg-surface-container-high border border-outline-variant/10 text-left hover:bg-primary-container group transition-all duration-300" style="">
+<span class="material-symbols-outlined mb-4 text-primary-fixed-dim group-hover:text-on-primary" style="">stars</span>
+<span class="block font-bold text-on-surface group-hover:text-on-primary" style="">Personal Life &amp; Events</span>
+</button>
+<button id="othersBtn" class="col-span-2 md:col-span-2 py-3 px-6 rounded-xl bg-surface-container-high border border-outline-variant/10 flex items-center gap-3 hover:bg-primary-container group transition-all duration-300 w-full" style="">
+<span class="font-bold text-on-surface group-hover:text-on-primary" style="">Others</span>
+<span class="material-symbols-outlined ml-auto text-primary-fixed-dim group-hover:text-on-primary animate-bounce-slow" style="">arrow_downward</span>
+</button></div>
+</section>
+<!-- Visual Separation -->
+<section class="mb-20 -mt-12">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider mt-4" style="">Specify your topics (others)</label>
+<input id="othersInput" class="w-full bg-surface-container-lowest border-outline-variant/10 rounded-xl p-5 text-on-surface focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim transition-all" placeholder="Add one or more topics" type="text">
+</div>
+</section><div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent mb-20"></div>
+<!-- Voice Sample Section -->
+<section class="mb-20">
+<div class="mb-10 text-center">
+<h3 class="font-headline text-3xl text-white mb-2" style="">Now let us hear you</h3>
+<p class="text-on-surface-variant max-w-md mx-auto" style="">Introduce yourself to your ideal client and briefly explain your unique approach.</p>
+</div>
+<div class="glass-card p-12 rounded-3xl flex flex-col items-center border border-outline-variant/10">
+<!-- Waveform Simulation -->
+<div class="flex items-center justify-center gap-1 h-12 mb-8">
+<div class="w-1 bg-primary-container/20 h-4 rounded-full"></div>
+<div class="w-1 bg-primary-container/40 h-8 rounded-full"></div>
+<div class="w-1 bg-primary-container/60 h-6 rounded-full"></div>
+<div class="w-1 bg-primary-container h-10 rounded-full"></div>
+<div class="w-1 bg-primary-container/80 h-12 rounded-full"></div>
+<div class="w-1 bg-primary-container h-10 rounded-full"></div>
+<div class="w-1 bg-primary-container/60 h-6 rounded-full"></div>
+<div class="w-1 bg-primary-container/40 h-8 rounded-full"></div>
+<div class="w-1 bg-primary-container/20 h-4 rounded-full"></div>
+</div>
+<!-- Recorder UI -->
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary-container/20 blur-2xl rounded-full scale-150"></div>
+<button id="voiceBtn" class="relative w-24 h-24 bg-primary-container rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,255,136,0.4)] hover:scale-105 transition-transform group" style="">
+<span id="voiceIcon" class="material-symbols-outlined text-on-primary text-4xl" data-weight="fill" style="font-variation-settings: &quot;FILL&quot; 1;">mic</span>
+</button>
+</div>
+<span id="voiceStatus" class="font-mono text-2xl text-primary-fixed-dim tracking-tighter" style="">Waiting...</span>
+<div class="mt-8 w-full hidden">
+<textarea id="voiceTranscript" class="w-full bg-surface-container-lowest border border-outline-variant/10 focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim/20 rounded-lg py-4 px-5 text-on-surface transition-all outline-none resize-none" placeholder="Your voice transcript will appear here..." rows="3"></textarea>
+</div>
+</div>
+</section>
+<!-- Opinion Text Areas -->
+<section class="space-y-8 mb-20">
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider" style="">Industry Misconceptions (Optional)</label>
+<textarea id="industryMisconceptions" class="w-full bg-surface-container-lowest border-outline-variant/10 rounded-xl p-5 text-on-surface focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim transition-all min-h-[120px]" placeholder="What is something everyone in your field gets wrong?"></textarea>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider" style="">Hardest Lesson (Optional)</label>
+<textarea id="hardestLesson" class="w-full bg-surface-container-lowest border-outline-variant/10 rounded-xl p-5 text-on-surface focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim transition-all min-h-[120px]" placeholder="Describe a failure that taught you a pivotal professional lesson."></textarea>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-bold text-on-surface-variant uppercase tracking-wider" style="">Disagreed Beliefs (Optional)</label>
+<textarea id="disagreedBeliefs" class="w-full bg-surface-container-lowest border-outline-variant/10 rounded-xl p-5 text-on-surface focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim transition-all min-h-[120px]" placeholder="What standard practice do you refuse to follow?"></textarea>
+</div>
+</section>
+<!-- Tone Calibration -->
+<section class="mb-24">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline text-2xl text-white" style="">Tone Calibration</h3>
+<p class="text-on-surface-variant text-sm" style="">Which sounds more like you? A or B</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container transition-colors" style="">
+<span class="material-symbols-outlined" style="">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container transition-colors" style="">
+<span class="material-symbols-outlined" style="">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-6" id="toneCalibrationGrid">
+<div class="p-8 rounded-2xl bg-surface-container-low border border-primary-container/20 relative overflow-hidden cursor-pointer ToneOption">
+<div class="absolute top-4 right-4 flex items-center gap-2">
+<span class="text-[10px] font-black uppercase tracking-widest text-primary-container" style="">Option A</span>
+<div class="w-5 h-5 rounded-full border-2 border-primary-container flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<p class="italic text-on-surface leading-relaxed" style="">"The data doesn't lie. Most startups fail because they prioritize vanity metrics over unit economics. If you aren't obsessed with your CAC, you're just burning venture cash on a hobby."</p>
+</div>
+<div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 opacity-60 hover:opacity-100 transition-opacity cursor-pointer relative ToneOption">
+<div class="absolute top-4 right-4 flex items-center gap-2">
+<span class="text-[10px] font-black uppercase tracking-widest text-outline-variant hidden" style="">Option B</span>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center"></div>
+</div>
+<p class="italic text-on-surface leading-relaxed" style="">"Building a company is about storytelling. People don't buy what you do; they buy why you do it. Forget the spreadsheets for a second—what's the soul of your product?"</p>
+</div>
+</div>
+</section>
+<!-- Main CTA -->
+<div class="flex justify-center">
+<button onclick="saveStep3AndProceed()" class="group flex items-center gap-3 bg-primary-container text-on-primary px-12 py-5 rounded-lg font-bold text-lg shadow-2xl shadow-primary-container/20 hover:scale-105 active:scale-95 transition-all" style="">
+        Continue
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar (Fixed Center) - Unified Indicator Style -->
+<nav class="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center h-8 px-4 bg-[#0e0e0e]/60 backdrop-blur-xl border border-white/5 rounded-full z-50 shadow-2xl transition-all duration-500 ease-out">
+<div class="flex items-center gap-4">
+<div onclick="window.location.href='step1.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step2.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step3.html'" class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_12px_rgba(0,255,136,0.6)] cursor-pointer hover:scale-150 transition-transform"></div>
+<div onclick="window.location.href='step4.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+</div>
+</nav>
+<script>
+  let recognition;
+  let isRecording = false;
+  let recordTimer;
+  let timeRemaining = 60;
+  
+  if ('webkitSpeechRecognition' in window) {
+      recognition = new webkitSpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      
+      recognition.onstart = function() {
+          isRecording = true;
+          timeRemaining = 60;
+          document.getElementById('voiceStatus').innerText = "Recording... (60s)";
+          document.getElementById('voiceBtn').classList.add('animate-pulse', 'bg-red-500');
+          document.getElementById('voiceIcon').innerText = "stop";
+          
+          recordTimer = setInterval(() => {
+              timeRemaining--;
+              if(timeRemaining > 0) {
+                  document.getElementById('voiceStatus').innerText = "Recording... (" + timeRemaining + "s)";
+              } else {
+                  clearInterval(recordTimer);
+                  recognition.stop();
+              }
+          }, 1000);
+      };
+      
+      recognition.onerror = function(event) {
+          console.error(event.error);
+          document.getElementById('voiceStatus').innerText = "Error: " + event.error;
+          clearInterval(recordTimer);
+      };
+      
+      recognition.onend = function() {
+          isRecording = false;
+          clearInterval(recordTimer);
+          document.getElementById('voiceStatus').innerText = "Finished";
+          document.getElementById('voiceBtn').classList.remove('animate-pulse', 'bg-red-500');
+          document.getElementById('voiceIcon').innerText = "mic";
+      };
+      
+      recognition.onresult = function(event) {
+          let final_transcript = '';
+          for (let i = event.resultIndex; i < event.results.length; ++i) {
+              if (event.results[i].isFinal) {
+                  final_transcript += event.results[i][0].transcript;
+              }
+          }
+          if (final_transcript !== '') {
+            const currentVal = document.getElementById('voiceTranscript').value;
+            document.getElementById('voiceTranscript').value = currentVal + (currentVal ? ' ' : '') + final_transcript;
+          }
+      };
+  } else {
+      document.getElementById('voiceStatus').innerText = "Browser not supported";
+      document.getElementById('voiceBtn').disabled = true;
+  }
+
+  document.getElementById('voiceBtn').addEventListener('click', function() {
+      if (isRecording) {
+          recognition.stop();
+      } else {
+          recognition.start();
+      }
+  });
+
+  // Topics Selection Logic
+  const topicsGrid = document.getElementById('topicsGrid');
+  const othersBtn = document.getElementById('othersBtn');
+  const othersInput = document.getElementById('othersInput');
+
+  const activeTopicClasses = ['bg-primary-container', 'shadow-lg', 'shadow-primary-container/10'];
+  const inactiveTopicClasses = ['bg-surface-container-high', 'border', 'border-outline-variant/10'];
+
+  if (topicsGrid) {
+      const topicButtons = topicsGrid.querySelectorAll('button:not(#othersBtn)');
+      topicButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+              const isActive = btn.classList.contains('bg-primary-container');
+              const icon = btn.querySelector('.material-symbols-outlined');
+              const textSpan = btn.querySelector('.block');
+              
+              if (isActive) {
+                  btn.classList.remove(...activeTopicClasses);
+                  btn.classList.add(...inactiveTopicClasses);
+                  btn.classList.add('hover:bg-primary-container', 'group');
+                  if(icon) { icon.classList.remove('text-on-primary'); icon.classList.add('text-primary-fixed-dim', 'group-hover:text-on-primary'); }
+                  if(textSpan) { textSpan.classList.remove('text-on-primary'); textSpan.classList.add('text-on-surface', 'group-hover:text-on-primary'); }
+              } else {
+                  btn.classList.remove(...inactiveTopicClasses, 'hover:bg-primary-container', 'group');
+                  btn.classList.add(...activeTopicClasses);
+                  if(icon) { icon.classList.add('text-on-primary'); icon.classList.remove('text-primary-fixed-dim', 'group-hover:text-on-primary'); }
+                  if(textSpan) { textSpan.classList.add('text-on-primary'); textSpan.classList.remove('text-on-surface', 'group-hover:text-on-primary'); }
+              }
+          });
+      });
+  }
+
+  if (othersBtn && othersInput) {
+      othersBtn.addEventListener('click', () => {
+          const isActive = othersBtn.classList.contains('bg-primary-container');
+          const textSpan = othersBtn.querySelector('span.font-bold');
+          const icon = othersBtn.querySelector('.material-symbols-outlined');
+          
+          if (isActive) {
+              othersBtn.classList.remove(...activeTopicClasses);
+              othersBtn.classList.add(...inactiveTopicClasses, 'hover:bg-primary-container', 'group');
+              if(textSpan) { textSpan.classList.remove('text-on-primary'); textSpan.classList.add('text-on-surface', 'group-hover:text-on-primary'); }
+              if(icon) { icon.classList.remove('text-on-primary'); icon.classList.add('text-primary-fixed-dim', 'group-hover:text-on-primary'); }
+          } else {
+              othersBtn.classList.remove(...inactiveTopicClasses, 'hover:bg-primary-container', 'group');
+              othersBtn.classList.add(...activeTopicClasses);
+              if(textSpan) { textSpan.classList.add('text-on-primary'); textSpan.classList.remove('text-on-surface', 'group-hover:text-on-primary'); }
+              if(icon) { icon.classList.add('text-on-primary'); icon.classList.remove('text-primary-fixed-dim', 'group-hover:text-on-primary'); }
+              othersInput.focus();
+          }
+      });
+  }
+
+  // Tone Calibration Logic
+  const toneGrid = document.getElementById('toneCalibrationGrid');
+  if (toneGrid) {
+      const toneOptions = toneGrid.querySelectorAll('.ToneOption');
+      toneOptions.forEach((option, index) => {
+          option.addEventListener('click', () => {
+              // Reset all to inactive
+              toneOptions.forEach((opt, idx) => {
+                  opt.className = 'p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 opacity-60 hover:opacity-100 transition-opacity cursor-pointer relative ToneOption';
+                  opt.querySelector('.absolute').innerHTML = `
+                    <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant hidden" style="">Option ${idx === 0 ? 'A' : 'B'}</span>
+                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center"></div>
+                  `;
+              });
+
+              // Set active
+              option.className = 'p-8 rounded-2xl bg-surface-container-low border border-primary-container/20 relative overflow-hidden cursor-pointer ToneOption';
+              option.querySelector('.absolute').innerHTML = `
+                    <span class="text-[10px] font-black uppercase tracking-widest text-primary-container" style="">Option ${index === 0 ? 'A' : 'B'}</span>
+                    <div class="w-5 h-5 rounded-full border-2 border-primary-container flex items-center justify-center">
+                    <div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+                    </div>
+              `;
+              option.setAttribute('data-selected-tone', index === 0 ? 'A' : 'B');
+          });
+      });
+  }
+
+  function saveStep3AndProceed() {
+      const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
+      
+      const activeTopicsNodes = document.querySelectorAll('#topicsGrid button.bg-primary-container');
+      const topics = [];
+      activeTopicsNodes.forEach(node => {
+         const label = node.querySelector('.block.font-bold, span.font-bold');
+         if(label && label.innerText !== 'Others') topics.push(label.innerText.trim());
+      });
+      data.topics = topics;
+      
+      data.othersTopic = document.getElementById('othersInput')?.value || '';
+      data.voiceTranscript = document.getElementById('voiceTranscript')?.value || '';
+      data.industryMisconceptions = document.getElementById('industryMisconceptions')?.value || '';
+      data.hardestLesson = document.getElementById('hardestLesson')?.value || '';
+      data.disagreedBeliefs = document.getElementById('disagreedBeliefs')?.value || '';
+      
+      const activeToneNode = document.querySelector('#toneCalibrationGrid .ToneOption.border-primary-container\\/20');
+      data.toneCalibration = activeToneNode ? (activeToneNode.getAttribute('data-selected-tone') || 'A') : 'A';
+
+      localStorage.setItem('onboarding_data', JSON.stringify(data));
+      window.location.href = 'step4.html';
+  }
+</script>
+</body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Onboarding - Step 4: LinkedIn Connection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#60ff99",
+              "surface-container-high": "#2a2a2a",
+              "on-surface-variant": "#b9cbb9",
+              "on-secondary-fixed-variant": "#005228",
+              "on-error-container": "#ffdad6",
+              "surface-container-lowest": "#0e0e0e",
+              "inverse-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "surface-container-highest": "#353534",
+              "primary": "#f1ffef",
+              "surface-bright": "#3a3939",
+              "on-background": "#e5e2e1",
+              "secondary-container": "#027038",
+              "primary-container": "#00ff88",
+              "error": "#ffb4ab",
+              "secondary-fixed": "#9af7b0",
+              "secondary": "#7eda96",
+              "surface": "#131313",
+              "surface-variant": "#353534",
+              "tertiary-fixed-dim": "#e5c364",
+              "on-primary-fixed-variant": "#005228",
+              "primary-fixed-dim": "#00e479",
+              "on-primary-container": "#007139",
+              "outline-variant": "#3b4b3d",
+              "on-secondary-fixed": "#00210c",
+              "tertiary-fixed": "#ffe08d",
+              "on-primary": "#003919",
+              "on-tertiary": "#3d2f00",
+              "on-error": "#690005",
+              "error-container": "#93000a",
+              "inverse-on-surface": "#313030",
+              "on-secondary": "#003919",
+              "on-secondary-container": "#94f0ab",
+              "surface-container": "#201f1f",
+              "tertiary-container": "#ffdb79",
+              "on-surface": "#e5e2e1",
+              "on-tertiary-fixed-variant": "#584400",
+              "outline": "#849585",
+              "on-tertiary-fixed": "#241a00",
+              "surface-tint": "#00e479",
+              "secondary-fixed-dim": "#7eda96",
+              "surface-container-low": "#1c1b1b",
+              "background": "#131313",
+              "inverse-primary": "#006d37",
+              "on-primary-fixed": "#00210c",
+              "tertiary": "#fffaf7",
+              "on-tertiary-container": "#795f01"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(24px);
+        }
+        .linkedin-brand { background-color: #0077B5; }
+        .whatsapp-brand { background-color: #25D366; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen overflow-x-hidden pb-24">
+<!-- Top Navigation Anchor - Applied from SCREEN_78 style -->
+<header class="bg-[#131313] docked full-width top-0 z-50 bg-[#0e0e0e] shadow-[0_48px_48px_-12px_rgba(14,14,14,0.6)]">
+<div class="flex items-center justify-between w-full px-6 h-14 max-w-none">
+<button onclick="window.history.back()" class="text-[#00ff88] hover:bg-[#2a2a2a] transition-colors duration-300 scale-95 active:scale-90 transition-transform p-2 rounded-full" style="">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline font-bold text-white tracking-tight text-sm uppercase opacity-60 mb-1" style="">Onboarding</h1>
+<div class="flex items-center gap-1.5">
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-1 rounded-full bg-[#00ff88]/30"></div>
+<div class="h-1 w-3 rounded-full bg-[#00ff88] shadow-[0_0_8px_rgba(0,255,136,0.6)]"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-[#00ff88] font-headline font-bold text-xs tracking-wider uppercase" style="">Final step</span>
+</div>
+</div>
+</header>
+<main class="relative pt-24 pb-32 px-6 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[calc(100vh-64px)]">
+<!-- Left: Context & Heading -->
+<div class="lg:col-span-5 space-y-8">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/20 text-secondary border border-outline-variant/20 rounded-full text-xs font-semibold tracking-wider uppercase" style="">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+                    Identity Verification
+                </div>
+<h2 class="font-headline text-5xl md:text-6xl font-extrabold text-white leading-tight" style="">One last step</h2>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-md leading-relaxed" style="">Connect your LinkedIn so we can post on your behalf and synchronize your professional voice.</p>
+</div>
+<div class="flex flex-col gap-4 text-sm text-on-surface-variant/80">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-xl" data-icon="security" style="">security</span>
+<p class="" style="">We use end-to-end encryption for all API handshakes.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-xl" data-icon="verified_user" style="">verified_user</span>
+<p class="" style="">Official LinkedIn API integration ensures account safety.</p>
+</div>
+</div>
+</div>
+<!-- Right: Interactive Surface -->
+<div class="lg:col-span-7 flex justify-center lg:justify-end">
+<div class="w-full max-w-lg">
+<!-- Connect State Card -->
+<div class="glass-card rounded-2xl p-8 border border-outline-variant/15 shadow-2xl relative overflow-hidden group">
+<!-- Subtle Glow Backdrop -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10 flex flex-col items-center text-center space-y-8">
+<div class="w-20 h-20 linkedin-brand rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
+<svg class="w-10 h-10 fill-white" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</div>
+<div class="space-y-2">
+<h3 class="text-2xl font-bold text-white" style="">Identity Access</h3>
+<p class="text-on-surface-variant text-sm px-8" style="">By connecting, you allow the AI Architect to read your engagement data and publish drafted posts.</p>
+</div>
+<button onclick="connectLinkedIn()" class="w-full py-4 rounded-xl linkedin-brand text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(0,119,181,0.4)] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-3" style="">
+                            Connect LinkedIn Account
+                            <span class="material-symbols-outlined" data-icon="open_in_new" style="">open_in_new</span>
+</button>
+<!-- Success State Preview (Hidden until state change, but shown here for UI design) -->
+<div class="w-full pt-8 mt-8 border-t border-outline-variant/10 hidden">
+<div class="flex items-center justify-between bg-surface-container-low p-4 rounded-xl">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-full border-2 border-primary-container object-cover" data-alt="professional portrait of a confident male executive in a dark tailored suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTGr5j1KfK-ORIluXlRvIMJpP0YmVDHjheg3mNMgoMCo4jvcUhDUahesWUrs7yj4acuSSw-keFe2FdFQyQIMkL0UOtPBCb5MWmCmowyqGBfqVRNn-FxEGsP9EGFF6Wt8bZSLkNTcl-58YiuDq13tg9pOngpB7kbXQngn_zh9sgEtVjSsOt8wmKkHszesevFxKG5VnRGyDQZpn-MMeeqT-g0kpP1Iy7v0sx8tXQ11zeRFb4grqpXlXVIOG_42k-j91e3tjKSa5xSH1h" style="">
+<div class="absolute -bottom-1 -right-1 bg-primary-container text-on-primary rounded-full p-0.5">
+<span class="material-symbols-outlined text-[12px] font-bold" data-icon="check" style="font-variation-settings: &quot;FILL&quot; 1;">check</span>
+</div>
+</div>
+<div class="text-left">
+<p class="text-white font-bold text-sm leading-none" style="">Connected as Alex Rivers</p>
+<p class="text-on-surface-variant text-xs" style="">Chief Strategy Officer</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="verified" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+</div>
+</div>
+<button onclick="window.location.href='success.html'" class="w-full py-5 rounded-xl bg-primary-container text-on-primary font-extrabold text-xl shadow-[0_0_40px_rgba(0,255,136,0.2)] hover:shadow-[0_0_50px_rgba(0,255,136,0.4)] transition-all duration-500 flex items-center justify-center gap-3 hover:gap-6" style="">
+                            Complete Setup
+                            <span class="material-symbols-outlined font-bold" data-icon="arrow_forward" style="">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Full Screen Success Overlay (Conceptually separate view) -->
+<div class="fixed inset-0 bg-surface z-[100] flex flex-col items-center justify-center p-6 text-center transition-all duration-700 opacity-0 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,136,0.05)_0%,transparent_70%)]"></div>
+<div class="relative space-y-12 max-w-2xl">
+<!-- Animated Checkmark Container -->
+<div class="relative inline-block">
+<div class="absolute inset-0 bg-primary-container blur-3xl opacity-20 animate-pulse"></div>
+<div class="w-32 h-32 rounded-full border-4 border-primary-container flex items-center justify-center relative">
+<span class="material-symbols-outlined text-primary-container text-7xl font-bold" data-icon="check" style="font-variation-settings: &quot;FILL&quot; 1;">check</span>
+</div>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold text-white tracking-tighter" style="">Your clone is ready.</h2>
+<p class="text-on-surface-variant text-xl md:text-2xl font-medium" style="">Send a voice note to your WhatsApp bot to create your first post.</p>
+</div>
+<div class="flex flex-col items-center gap-6">
+<a class="inline-flex items-center gap-4 whatsapp-brand px-10 py-6 rounded-2xl text-white font-extrabold text-2xl shadow-2xl hover:scale-105 transition-all duration-300" href="#" style="">
+<svg class="w-8 h-8 fill-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.82c1.516.903 3.076 1.355 4.671 1.356 5.431 0 9.851-4.42 9.854-9.853.002-2.633-1.023-5.105-2.887-6.97-1.864-1.864-4.337-2.887-6.97-2.888-5.431 0-9.85 4.42-9.853 9.853 0 1.761.458 3.44 1.332 5.003l-1.004 3.665 3.857-1.011zm11.467-7.632c-.301-.151-1.774-.875-2.046-.975-.27-.099-.47-.15-.669.151-.198.3-.769.975-.941 1.176-.173.201-.344.227-.646.075-.301-.151-1.274-.47-2.426-1.502-.897-.802-1.502-1.791-1.677-2.091-.176-.301-.019-.462.131-.611.135-.134.301-.351.452-.527.151-.176.201-.301.301-.502.101-.201.05-.377-.025-.527-.075-.151-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.774-.726 2.022-1.429.247-.704.247-1.307.173-1.432-.073-.124-.272-.201-.574-.351z"></path></svg>
+                    Message us on WhatsApp
+                </a>
+<p class="text-[#25D366] font-bold tracking-widest" style="">+1 (555) 012-3456</p>
+</div>
+</div>
+</div>
+<nav class="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center h-8 px-4 bg-[#0e0e0e]/60 backdrop-blur-xl border border-white/5 rounded-full z-[60] shadow-2xl transition-all duration-500 ease-out">
+<div class="flex items-center gap-4">
+<div onclick="window.location.href='step1.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step2.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step3.html'" class="w-2 h-2 rounded-full border border-on-surface-variant/30 cursor-pointer hover:scale-150 hover:bg-white/20 transition-all"></div>
+<div onclick="window.location.href='step4.html'" class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_12px_rgba(0,255,136,0.6)] cursor-pointer hover:scale-150 transition-transform"></div>
+</div>
+</div>
+</nav>
+<script type="module">
+  import { supabase } from './supabase-config.js';
+  
+  // Auto-redirect if somehow landed back here after auth (e.g. strict URL mismatch)
+  supabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+       window.location.href = 'success.html';
+    }
+  });
+
+  window.connectLinkedIn = async function() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'linkedin_oidc',
+      options: {
+        redirectTo: window.location.origin + '/success.html'
+      }
+    });
+
+    if(error) {
+      console.error(error);
+      alert('Error connecting LinkedIn: ' + error.message);
+    }
+  };
+</script>
+</body></html>
