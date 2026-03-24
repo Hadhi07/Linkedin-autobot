@@ -32,7 +32,7 @@
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden" data-mode="connect">
 <!-- TopAppBar - Applied style from SCREEN_78 -->
 <header class="bg-[#131313] docked full-width top-0 z-50 bg-[#0e0e0e] shadow-[0_48px_48px_-12px_rgba(14,14,14,0.6)]">
-<div class="flex items-center justify-between w-full px-6 h-14 max-w-none"><button class="text-[#00ff88] hover:bg-[#2a2a2a] transition-colors duration-300 scale-95 active:scale-90 transition-transform p-2 rounded-full">
+<div class="flex items-center justify-between w-full px-6 h-14 max-w-none"><button class="text-[#00ff88] hover:bg-[#2a2a2a] transition-colors duration-300 scale-95 active:scale-90 transition-transform p-2 rounded-full" onclick="window.location.href='login.html'">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
 <div class="flex flex-col items-center">
@@ -52,7 +52,7 @@
 <!-- Progress Section -->
 <!-- Hero Section -->
 <section class="mb-12">
-<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-4">Initialize Your AI Architect</h2>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-4">Create your AI architect</h2>
 <p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-md">
                 Tell us who you are so we can write exactly like you.
             </p>
@@ -145,6 +145,12 @@
   }
 
   function saveStep1AndProceed() {
+      // Validate
+      const role = document.getElementById('userRole').value;
+      const audience = document.getElementById('targetAudience').value;
+      if (!role) { alert("Please provide your role before continuing."); return; }
+      if (!audience) { alert("Please define your target audience before continuing."); return; }
+
       const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
       data.fullName = document.getElementById('fullName')?.value || '';
       data.roleTitle = document.getElementById('roleTitle')?.value || '';

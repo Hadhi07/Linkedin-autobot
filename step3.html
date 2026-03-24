@@ -53,7 +53,7 @@
 <main class="min-h-screen pb-32 px-6 max-w-4xl mx-auto pt-12">
 <!-- Intro Header -->
 <section class="mb-16">
-<h2 class="font-headline text-5xl md:text-6xl text-on-surface mb-4 leading-none" style="">Establish Core Content Pillars</h2>
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface mb-4 leading-none" style="">Select your core content</h2>
 <p class="text-on-surface-variant text-lg max-w-xl" style="">Pick your content pillars and give us a sample of your real voice.</p>
 </section>
 <!-- Content Pillars Selection (Bento Style) -->
@@ -166,24 +166,97 @@
 </button>
 </div>
 </div>
-<div class="grid md:grid-cols-2 gap-6" id="toneCalibrationGrid">
-<div class="p-8 rounded-2xl bg-surface-container-low border border-primary-container/20 relative overflow-hidden cursor-pointer ToneOption">
-<div class="absolute top-4 right-4 flex items-center gap-2">
-<span class="text-[10px] font-black uppercase tracking-widest text-primary-container" style="">Option A</span>
-<div class="w-5 h-5 rounded-full border-2 border-primary-container flex items-center justify-center">
-<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+
+<div class="relative w-full overflow-hidden" id="toneCarousel">
+    <div class="flex transition-transform duration-500 ease-in-out w-[400%]" id="toneTrack">
+        <!-- Option 1 -->
+        <div class="w-1/4 p-4">
+            <div class="p-8 rounded-2xl bg-surface-container-low border border-primary-container/20 ToneOption active-tone h-full" data-tone="Analytical/VC">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-primary-container">Option 1: The Analyst</span>
+                    <div class="w-5 h-5 rounded-full border-2 border-primary-container flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-primary-container indicator"></div></div>
+                </div>
+                <p class="italic text-on-surface leading-relaxed">"The data doesn't lie. Most startups fail because they prioritize vanity metrics over unit economics. If you aren't obsessed with your CAC, you're just burning venture cash on a hobby."</p>
+            </div>
+        </div>
+        <!-- Option 2 -->
+        <div class="w-1/4 p-4">
+            <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full" data-tone="Storyteller">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant">Option 2: The Storyteller</span>
+                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-transparent indicator"></div></div>
+                </div>
+                <p class="italic text-on-surface leading-relaxed">"Building a company is about storytelling. People don't buy what you do; they buy why you do it. Forget the spreadsheets for a second—what's the soul of your product?"</p>
+            </div>
+        </div>
+        <!-- Option 3 -->
+        <div class="w-1/4 p-4">
+            <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full" data-tone="Tactical/Guide">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant">Option 3: The Tactician</span>
+                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-transparent indicator"></div></div>
+                </div>
+                <p class="italic text-on-surface leading-relaxed">"Here is the exact 3-step framework I used to double conversions: 1) Rewrite the hero hook. 2) Slice the onboarding friction in half. 3) Automate the follow-up sequences. Stop guessing, start executing."</p>
+            </div>
+        </div>
+        <!-- Option 4 -->
+        <div class="w-1/4 p-4">
+            <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full" data-tone="Provocative">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant">Option 4: The Provocateur</span>
+                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-transparent indicator"></div></div>
+                </div>
+                <p class="italic text-on-surface leading-relaxed">"Why are you still using cold email in 2026? It's dead. Instead of spamming inboxes, you should be building undeniable leverage in public spaces where your audience already lives. Wake up."</p>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-<p class="italic text-on-surface leading-relaxed" style="">"The data doesn't lie. Most startups fail because they prioritize vanity metrics over unit economics. If you aren't obsessed with your CAC, you're just burning venture cash on a hobby."</p>
-</div>
-<div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 opacity-60 hover:opacity-100 transition-opacity cursor-pointer relative ToneOption">
-<div class="absolute top-4 right-4 flex items-center gap-2">
-<span class="text-[10px] font-black uppercase tracking-widest text-outline-variant hidden" style="">Option B</span>
-<div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center"></div>
-</div>
-<p class="italic text-on-surface leading-relaxed" style="">"Building a company is about storytelling. People don't buy what you do; they buy why you do it. Forget the spreadsheets for a second—what's the soul of your product?"</p>
-</div>
-</div>
+<script>
+    let currentToneIndex = 0;
+    const tonesCount = 4;
+    const toneTrack = document.getElementById('toneTrack');
+    const toneOptions = document.querySelectorAll('.ToneOption');
+    let selectedTone = 'Analytical/VC';
+
+    function updateCarousel() {
+        toneTrack.style.transform = `translateX(-${currentToneIndex * 25}%)`;
+    }
+
+    // Left chevron
+    document.querySelectorAll('button:has(span:contains("chevron_left")), .material-symbols-outlined:contains("chevron_left")').forEach(btn => {
+        let parent = btn.tagName === 'BUTTON' ? btn : btn.parentElement;
+        parent.onclick = () => { if (currentToneIndex > 0) { currentToneIndex--; updateCarousel(); } }
+    });
+    // Right chevron
+    document.querySelectorAll('button:has(span:contains("chevron_right")), .material-symbols-outlined:contains("chevron_right")').forEach(btn => {
+        let parent = btn.tagName === 'BUTTON' ? btn : btn.parentElement;
+        parent.onclick = () => { if (currentToneIndex < tonesCount - 1) { currentToneIndex++; updateCarousel(); } }
+    });
+
+    // Make options selectable
+    toneOptions.forEach(opt => {
+        opt.onclick = () => {
+            // Reset all
+            toneOptions.forEach(o => {
+                o.classList.remove('active-tone', 'bg-surface-container-low', 'border-primary-container/20');
+                o.classList.add('bg-surface-container-lowest', 'border-outline-variant/10', 'opacity-60');
+                o.querySelector('span').classList.remove('text-primary-container');
+                o.querySelector('span').classList.add('text-outline-variant');
+                o.querySelector('.tone-radio').classList.replace('border-primary-container', 'border-outline-variant/30');
+                o.querySelector('.indicator').classList.replace('bg-primary-container', 'bg-transparent');
+            });
+            // Activate clicked
+            opt.classList.remove('bg-surface-container-lowest', 'border-outline-variant/10', 'opacity-60');
+            opt.classList.add('active-tone', 'bg-surface-container-low', 'border-primary-container/20');
+            opt.querySelector('span').classList.remove('text-outline-variant');
+            opt.querySelector('span').classList.add('text-primary-container');
+            opt.querySelector('.tone-radio').classList.replace('border-outline-variant/30', 'border-primary-container');
+            opt.querySelector('.indicator').classList.replace('bg-transparent', 'bg-primary-container');
+            
+            selectedTone = opt.getAttribute('data-tone');
+        };
+    });
+</script>
 </section>
 <!-- Main CTA -->
 <div class="flex justify-center">
@@ -352,6 +425,12 @@
   }
 
   function saveStep3AndProceed() {
+      // Validate
+      const expertise = document.getElementById('expertiseArea').value;
+      const themes = document.getElementById('recurringThemes').value;
+      const disagreed = document.getElementById('disagreedBeliefs').value;
+      if (!expertise || !themes || !disagreed) { alert("Please fill out all content pillars before continuing."); return; }
+
       const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
       
       const activeTopicsNodes = document.querySelectorAll('#topicsGrid button.bg-primary-container');

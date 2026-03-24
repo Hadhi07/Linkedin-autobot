@@ -45,7 +45,7 @@
 <!-- Progress Section - Unified Style -->
 <!-- Header Section -->
 <section class="mb-12">
-<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-4" style="">Calibrate Your Narrative Voice</h2>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-tight mb-4" style="">How you want to express yourself</h2>
 <p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-md" style="">
             This is what makes your posts sound like you, not like AI. We’ll use these parameters to calibrate your unique brand frequency.
         </p>
@@ -179,6 +179,12 @@
   setupWritingStyleGrid();
 
   function saveStep2AndProceed() {
+      // Validate
+      const style = document.getElementById('writingStyle').value;
+      const sentence = document.getElementById('sentenceStyle').value;
+      const humor = document.getElementById('humor').value;
+      if (!style || !sentence || !humor) { alert("Please fill out all style options before continuing."); return; }
+
       const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
       
       const activeWritingStyle = document.querySelector('#writingStyleGrid button.bg-primary-container h4');
