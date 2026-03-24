@@ -145,24 +145,57 @@
   }
 
   function saveStep1AndProceed() {
-      // Validate
-      const role = document.getElementById('userRole').value;
-      const audience = document.getElementById('targetAudience').value;
-      if (!role) { alert("Please provide your role before continuing."); return; }
-      if (!audience) { alert("Please define your target audience before continuing."); return; }
+        const fullName = document.getElementById('fullName')?.value.trim() || '';
+        const roleTitle = document.getElementById('roleTitle')?.value.trim() || '';
+        const companyName = document.getElementById('companyName')?.value.trim() || '';
+        const industry = document.getElementById('industrySelect')?.value || '';
+        const targetAudience = document.getElementById('targetAudience')?.value.trim() || '';
+        const activeBtn = document.querySelector('#linkedinGoalBtns button.bg-primary-container');
+        const linkedinGoal = activeBtn ? activeBtn.innerText : '';
 
-      const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
-      data.fullName = document.getElementById('fullName')?.value || '';
-      data.roleTitle = document.getElementById('roleTitle')?.value || '';
-      data.companyName = document.getElementById('companyName')?.value || '';
-      data.industry = document.getElementById('industrySelect')?.value || '';
-      data.targetAudience = document.getElementById('targetAudience')?.value || '';
-      
-      const activeBtn = document.querySelector('#linkedinGoalBtns button.bg-primary-container');
-      data.linkedinGoal = activeBtn ? activeBtn.innerText : '';
+        if(!fullName || !roleTitle || !industry || !targetAudience || !linkedinGoal) {
+            showToast("Please complete all required fields vividly before advancing.");
+            return;
+        }
 
-      localStorage.setItem('onboarding_data', JSON.stringify(data));
+        const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
+        data.fullName = fullName;
+        data.roleTitle = roleTitle;
+        data.companyName = companyName;
+        data.industry = industry;
+        data.targetAudience = targetAudience;
+        data.linkedinGoal = linkedinGoal;
+
+        localStorage.setItem('onboarding_data', JSON.stringify(data));
       window.location.href = 'step2.html';
   }
 </script>
-</body></html>
+
+<div id="toast-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 transition-all pointer-events-none"></div>
+<script>
+function showToast(message, type = 'error') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    const isError = type === 'error';
+    const bg = isError ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-primary-container/10 border-primary-container/50 text-primary-container';
+    const icon = isError ? 'error' : 'check_circle';
+    
+    toast.className = `flex items-center gap-3 px-6 py-4 rounded-2xl border backdrop-blur-md shadow-2xl transform transition-all duration-300 translate-y-[-100%] opacity-0 ${bg}`;
+    toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span><p class="font-bold text-sm">${message}</p>`;
+    
+    container.appendChild(toast);
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-[-100%]', 'opacity-0');
+    });
+    
+    // Auto remove
+    setTimeout(() => {
+        toast.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => toast.remove(), 300);
+    }, 4000);
+}
+</script>
+\n</body></html>

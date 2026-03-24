@@ -179,25 +179,50 @@
   setupWritingStyleGrid();
 
   function saveStep2AndProceed() {
-      // Validate
-      const style = document.getElementById('writingStyle').value;
-      const sentence = document.getElementById('sentenceStyle').value;
-      const humor = document.getElementById('humor').value;
-      if (!style || !sentence || !humor) { alert("Please fill out all style options before continuing."); return; }
+        const wsBtn = document.querySelector('#writingStyleGrid button.bg-primary-container');
+        const ssBtn = document.querySelector('#sentenceStyleDiv button.bg-primary-container');
+        const hBtn = document.querySelector('#humorDiv button.bg-primary-container');
+        
+        if(!wsBtn || !ssBtn || !hBtn) {
+            showToast("Please select your writing style, sentence structure, and humor preferences.");
+            return;
+        }
 
-      const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
-      
-      const activeWritingStyle = document.querySelector('#writingStyleGrid button.bg-primary-container h4');
-      data.writingStyle = activeWritingStyle ? activeWritingStyle.innerText : '';
-      
-      const activeSentenceStyle = document.querySelector('#sentenceStyleDiv button.bg-primary-container');
-      data.sentenceStyle = activeSentenceStyle ? activeSentenceStyle.innerText : '';
-      
-      const activeHumor = document.querySelector('#humorDiv button.bg-primary-container');
-      data.humor = activeHumor ? activeHumor.innerText : '';
-      
-      localStorage.setItem('onboarding_data', JSON.stringify(data));
+        const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
+        data.writingStyle = wsBtn.innerText;
+        data.sentenceStyle = ssBtn.innerText;
+        data.humor = hBtn.innerText;
+
+        localStorage.setItem('onboarding_data', JSON.stringify(data));
       window.location.href = 'step3.html';
   }
 </script>
-</body></html>
+
+<div id="toast-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 transition-all pointer-events-none"></div>
+<script>
+function showToast(message, type = 'error') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    const isError = type === 'error';
+    const bg = isError ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-primary-container/10 border-primary-container/50 text-primary-container';
+    const icon = isError ? 'error' : 'check_circle';
+    
+    toast.className = `flex items-center gap-3 px-6 py-4 rounded-2xl border backdrop-blur-md shadow-2xl transform transition-all duration-300 translate-y-[-100%] opacity-0 ${bg}`;
+    toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span><p class="font-bold text-sm">${message}</p>`;
+    
+    container.appendChild(toast);
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-[-100%]', 'opacity-0');
+    });
+    
+    // Auto remove
+    setTimeout(() => {
+        toast.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => toast.remove(), 300);
+    }, 4000);
+}
+</script>
+\n</body></html>

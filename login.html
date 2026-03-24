@@ -39,8 +39,8 @@
         <div class="mx-auto w-16 h-16 bg-gradient-to-br from-primary-container to-secondary-container rounded-3xl flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(0,255,136,0.3)]">
             <span class="material-symbols-outlined text-black text-3xl">fingerprint</span>
         </div>
-        <h1 class="text-3xl font-extrabold font-headline bg-gradient-to-br from-white to-[#a0a0a0] bg-clip-text text-transparent transform tracking-tight">Access Node</h1>
-        <p class="text-on-surface-variant mt-3 text-sm font-medium tracking-wide">Provide your credentials to enter the workspace.</p>
+        <h1 class="text-3xl font-extrabold font-headline bg-gradient-to-br from-white to-[#a0a0a0] bg-clip-text text-transparent transform tracking-tight">Welcome to Onboarding</h1>
+        <p class="text-on-surface-variant mt-3 text-sm font-medium tracking-wide">Sign Up to start your onboarding process.</p>
     </div>
 
     <!-- Form -->
@@ -55,9 +55,19 @@
 
         <div class="space-y-2">
             <label class="text-xs uppercase tracking-widest text-[#a0a0a0] font-bold ml-2">WhatsApp Number</label>
-            <div class="relative group">
-                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#a0a0a0] group-focus-within:text-primary-container transition-colors">phone_iphone</span>
-                <input id="userPhone" required class="w-full bg-[#1a1a1a] border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-[#555] focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/50 transition-all font-medium" placeholder="+1 (555) 000-0000" type="tel"/>
+            <div class="relative group flex bg-[#1a1a1a] border border-white/5 rounded-2xl focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all">
+                <div class="flex items-center pl-4 pr-1 border-r border-white/10 relative">
+                    <span class="text-xl mr-1" id="flagIcon">🇮🇳</span>
+                    <select id="countryCode" class="bg-transparent text-white font-medium focus:outline-none appearance-none cursor-pointer pr-4 z-10">
+                        <option value="+91" data-flag="🇮🇳" class="text-black bg-white">+91</option>
+                        <option value="+971" data-flag="🇦🇪" class="text-black bg-white">+971</option>
+                        <option value="+966" data-flag="🇸🇦" class="text-black bg-white">+966</option>
+                        <option value="+1" data-flag="🇺🇸" class="text-black bg-white">+1</option>
+                        <option value="+44" data-flag="🇬🇧" class="text-black bg-white">+44</option>
+                    </select>
+                    <span class="material-symbols-outlined text-[16px] text-[#a0a0a0] absolute right-1 pointer-events-none">expand_more</span>
+                </div>
+                <input id="userPhone" required class="w-full bg-transparent py-4 pl-4 pr-4 text-white placeholder-[#555] focus:outline-none font-medium" placeholder="98765 43210" type="tel"/>
             </div>
         </div>
 
@@ -69,12 +79,19 @@
 </main>
 
 <script>
+    document.getElementById('countryCode').addEventListener('change', function(e) {
+        const selectedOption = e.target.options[e.target.selectedIndex];
+        document.getElementById('flagIcon').textContent = selectedOption.getAttribute('data-flag');
+    });
+
     document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('userName').value.trim();
-        const phone = document.getElementById('userPhone').value.trim();
+        const code = document.getElementById('countryCode').value;
+        const phoneInput = document.getElementById('userPhone').value.trim();
+        const phone = code + ' ' + phoneInput;
 
-        if (name && phone) {
+        if (name && phoneInput) {
             // Save to localStorage
             const data = {
                 name: name,
@@ -84,8 +101,40 @@
             
             // Redirect to step 1
             window.location.href = 'step1.html';
+        } else {
+            if(typeof showToast === 'function') {
+                showToast("Please provide both your name and phone number to continue.");
+            }
         }
     });
 </script>
-</body>
+
+<div id="toast-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 transition-all pointer-events-none"></div>
+<script>
+function showToast(message, type = 'error') {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    const isError = type === 'error';
+    const bg = isError ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-primary-container/10 border-primary-container/50 text-primary-container';
+    const icon = isError ? 'error' : 'check_circle';
+    
+    toast.className = `flex items-center gap-3 px-6 py-4 rounded-2xl border backdrop-blur-md shadow-2xl transform transition-all duration-300 translate-y-[-100%] opacity-0 ${bg}`;
+    toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span><p class="font-bold text-sm">${message}</p>`;
+    
+    container.appendChild(toast);
+    
+    // Animate in
+    requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-[-100%]', 'opacity-0');
+    });
+    
+    // Auto remove
+    setTimeout(() => {
+        toast.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => toast.remove(), 300);
+    }, 4000);
+}
+</script>
+\n</body>
 </html>
