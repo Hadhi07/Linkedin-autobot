@@ -84,7 +84,7 @@
 <h3 class="text-2xl font-bold text-white" style="">Identity Access</h3>
 <p class="text-on-surface-variant text-sm px-8" style="">By connecting, you allow the AI Architect to read your engagement data and publish drafted posts.</p>
 </div>
-<button onclick="connectLinkedIn()" class="w-full py-4 rounded-xl linkedin-brand text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(0,119,181,0.4)] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-3" style="">
+<button id="linkedin-connect-btn" class="flex mx-auto mt-6 items-center px-6 py-3 bg-[#0a66c2] text-white rounded-full font-semibold hover:bg-[#004182] transition-colors gap-3 transform hover:scale-105 active:scale-95" style="">
                             Connect LinkedIn Account
                             <span class="material-symbols-outlined" data-icon="open_in_new" style="">open_in_new</span>
 </button>
@@ -158,18 +158,21 @@
     }
   });
 
-  window.connectLinkedIn = async function() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'linkedin_oidc',
-      options: {
-        redirectTo: window.location.origin + '/success.html'
+  const connectBtn = document.getElementById('linkedin-connect-btn');
+  if (connectBtn) {
+    connectBtn.addEventListener('click', async () => {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'linkedin_oidc',
+        options: {
+          redirectTo: window.location.origin + '/success.html'
+        }
+      });
+
+      if(error) {
+        console.error(error);
+        alert('Error connecting LinkedIn: ' + error.message);
       }
     });
-
-    if(error) {
-      console.error(error);
-      alert('Error connecting LinkedIn: ' + error.message);
-    }
-  };
+  }
 </script>
 </body></html>

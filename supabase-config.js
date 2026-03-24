@@ -1,5 +1,12 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-export const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  if (typeof window !== 'undefined') {
+    alert("CRITICAL ERROR: Supabase environment variables are missing! You must add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your Netlify dashboard and click 'Trigger Deploy' again!");
+  }
+}
+
+export const supabase = createClient(supabaseUrl || 'https://placeholder.supabase.co', supabaseKey || 'placeholder')
