@@ -152,65 +152,70 @@
 </section>
 <!-- Tone Calibration -->
 <section class="mb-24">
-<div class="flex justify-between items-center mb-8">
+<div class="flex justify-between items-center mb-6">
 <div>
-<h3 class="font-headline text-2xl text-white" style="">Tone Calibration</h3>
-<p class="text-on-surface-variant text-sm" style="">Which sounds more like you? A or B</p>
-</div>
-<div class="flex gap-2">
-<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container transition-colors" style="">
-<span class="material-symbols-outlined" style="">chevron_left</span>
-</button>
-<button class="p-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container transition-colors" style="">
-<span class="material-symbols-outlined" style="">chevron_right</span>
-</button>
+<h3 class="font-headline text-2xl text-white">Tone Calibration</h3>
+<p class="text-on-surface-variant text-sm">Which sounds more like you?</p>
 </div>
 </div>
 
-<div class="relative w-full overflow-hidden" id="toneCarousel">
-    <div class="flex transition-transform duration-500 ease-in-out w-[400%]" id="toneTrack">
+<div class="flex items-center gap-4">
+<!-- Flank Left Arrow -->
+<button class="p-4 rounded-xl bg-surface-container-high text-on-surface hover:text-primary-container transition-colors shrink-0 shadow-lg" id="carouselLeftBtn">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+
+<div class="relative flex-1 overflow-hidden" id="toneCarousel">
+    <div class="flex transition-transform duration-500 ease-in-out w-[200%]" id="toneTrack">
         <!-- Option 1 -->
-        <div class="w-1/4 p-4">
-            <div class="p-8 rounded-2xl bg-surface-container-low border border-primary-container/20 ToneOption active-tone h-full" data-tone="Analytical/VC">
+        <div class="w-1/4 p-2">
+            <div class="p-6 rounded-2xl bg-surface-container-low border border-primary-container/20 ToneOption active-tone h-full cursor-pointer" data-tone="Analytical/VC">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-[10px] font-black uppercase tracking-widest text-primary-container">Option 1: The Analyst</span>
                     <div class="w-5 h-5 rounded-full border-2 border-primary-container flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-primary-container indicator"></div></div>
                 </div>
-                <p class="italic text-on-surface leading-relaxed">"The data doesn't lie. Most startups fail because they prioritize vanity metrics over unit economics. If you aren't obsessed with your CAC, you're just burning venture cash on a hobby."</p>
+                <p class="italic text-on-surface leading-relaxed text-sm">"The data doesn't lie. Most startups fail because they prioritize vanity metrics over unit economics. If you aren't obsessed with your CAC, you're just burning venture cash on a hobby."</p>
             </div>
         </div>
         <!-- Option 2 -->
-        <div class="w-1/4 p-4">
-            <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full" data-tone="Storyteller">
+        <div class="w-1/4 p-2">
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full cursor-pointer" data-tone="Storyteller">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant">Option 2: The Storyteller</span>
                     <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-transparent indicator"></div></div>
                 </div>
-                <p class="italic text-on-surface leading-relaxed">"Building a company is about storytelling. People don't buy what you do; they buy why you do it. Forget the spreadsheets for a second—what's the soul of your product?"</p>
+                <p class="italic text-on-surface leading-relaxed text-sm">"Building a company is about storytelling. People don't buy what you do; they buy why you do it. Forget the spreadsheets for a second—what's the soul of your product?"</p>
             </div>
         </div>
         <!-- Option 3 -->
-        <div class="w-1/4 p-4">
-            <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full" data-tone="Tactical/Guide">
+        <div class="w-1/4 p-2">
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full cursor-pointer" data-tone="Tactical/Guide">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant">Option 3: The Tactician</span>
                     <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-transparent indicator"></div></div>
                 </div>
-                <p class="italic text-on-surface leading-relaxed">"Here is the exact 3-step framework I used to double conversions: 1) Rewrite the hero hook. 2) Slice the onboarding friction in half. 3) Automate the follow-up sequences. Stop guessing, start executing."</p>
+                <p class="italic text-on-surface leading-relaxed text-sm">"Here is the exact 3-step framework I used to double conversions: 1) Rewrite the hero hook. 2) Slice the onboarding friction in half. 3) Automate the follow-up sequences."</p>
             </div>
         </div>
         <!-- Option 4 -->
-        <div class="w-1/4 p-4">
-            <div class="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full" data-tone="Provocative">
+        <div class="w-1/4 p-2">
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 ToneOption opacity-60 hover:opacity-100 transition-opacity h-full cursor-pointer" data-tone="Provocative">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-[10px] font-black uppercase tracking-widest text-outline-variant">Option 4: The Provocateur</span>
                     <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30 flex items-center justify-center tone-radio"><div class="w-2.5 h-2.5 rounded-full bg-transparent indicator"></div></div>
                 </div>
-                <p class="italic text-on-surface leading-relaxed">"Why are you still using cold email in 2026? It's dead. Instead of spamming inboxes, you should be building undeniable leverage in public spaces where your audience already lives. Wake up."</p>
+                <p class="italic text-on-surface leading-relaxed text-sm">"Why are you still using cold email in 2026? It's dead. Instead of spamming inboxes, you should be building undeniable leverage in public spaces. Wake up."</p>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Flank Right Arrow -->
+<button class="p-4 rounded-xl bg-surface-container-high text-on-surface hover:text-primary-container transition-colors shrink-0 shadow-lg" id="carouselRightBtn">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
 <script>
     let currentToneIndex = 0;
     const tonesCount = 4;
@@ -219,13 +224,18 @@
     let selectedTone = 'Analytical/VC';
 
     function updateCarousel() {
+        // Because track is 200% wide (4 cards, each 25%), moving by 25% slides one card over.
+        // The max index is 2 (since 0, 1, 2 leaves 2 cards visible at the end).
         toneTrack.style.transform = `translateX(-${currentToneIndex * 25}%)`;
     }
 
-    const controls = document.querySelectorAll('.mb-8 button');
-    if(controls.length >= 2) {
-        controls[0].onclick = () => { if (currentToneIndex > 0) { currentToneIndex--; updateCarousel(); } };
-        controls[1].onclick = () => { if (currentToneIndex < tonesCount - 1) { currentToneIndex++; updateCarousel(); } };
+    const leftBtn = document.getElementById('carouselLeftBtn');
+    const rightBtn = document.getElementById('carouselRightBtn');
+    
+    if(leftBtn && rightBtn) {
+        leftBtn.onclick = () => { if (currentToneIndex > 0) { currentToneIndex--; updateCarousel(); } };
+        // Max index is 2 because sliding twice reveals the last two cards seamlessly
+        rightBtn.onclick = () => { if (currentToneIndex < 2) { currentToneIndex++; updateCarousel(); } };
     }
 
     toneOptions.forEach(opt => {

@@ -55,19 +55,20 @@
 
         <div class="space-y-2">
             <label class="text-xs uppercase tracking-widest text-[#a0a0a0] font-bold ml-2">WhatsApp Number</label>
-            <div class="relative group flex bg-[#1a1a1a] border border-white/5 rounded-2xl focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all">
-                <div class="flex items-center pl-4 pr-1 border-r border-white/10 relative">
-                    <span class="text-xl mr-1" id="flagIcon">🇮🇳</span>
-                    <select id="countryCode" class="bg-transparent text-white font-medium focus:outline-none appearance-none cursor-pointer pr-4 z-10">
+            <div class="flex gap-3">
+                <div class="relative bg-[#1a1a1a] border border-white/5 rounded-2xl flex items-center px-4 w-[100px] shrink-0 focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all">
+                    <span class="text-xl mr-2" id="flagIcon">🇮🇳</span>
+                    <select id="countryCode" class="bg-transparent text-white font-medium focus:outline-none appearance-none cursor-pointer w-full z-10">
                         <option value="+91" data-flag="🇮🇳" class="text-black bg-white">+91</option>
                         <option value="+971" data-flag="🇦🇪" class="text-black bg-white">+971</option>
                         <option value="+966" data-flag="🇸🇦" class="text-black bg-white">+966</option>
                         <option value="+1" data-flag="🇺🇸" class="text-black bg-white">+1</option>
                         <option value="+44" data-flag="🇬🇧" class="text-black bg-white">+44</option>
                     </select>
-                    <span class="material-symbols-outlined text-[16px] text-[#a0a0a0] absolute right-1 pointer-events-none">expand_more</span>
                 </div>
-                <input id="userPhone" required class="w-full bg-transparent py-4 pl-4 pr-4 text-white placeholder-[#555] focus:outline-none font-medium" placeholder="98765 43210" type="tel"/>
+                <div class="flex-1 bg-[#1a1a1a] border border-white/5 rounded-2xl focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all relative">
+                    <input id="userPhone" required class="w-full bg-transparent py-4 px-4 text-white placeholder-[#555] focus:outline-none font-medium" placeholder="98765 43210" type="tel"/>
+                </div>
             </div>
         </div>
 
