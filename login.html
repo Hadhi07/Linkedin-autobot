@@ -49,14 +49,14 @@
             <label class="text-xs uppercase tracking-widest text-[#a0a0a0] font-bold ml-2">Full Name</label>
             <div class="relative group">
                 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#a0a0a0] group-focus-within:text-primary-container transition-colors">person</span>
-                <input id="userName" required class="w-full bg-[#1a1a1a] border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white placeholder-[#555] focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/50 transition-all font-medium" placeholder="Enter your full name" type="text"/>
+                <input id="userName" required class="w-full bg-[#1a1a1a] border border-white/5 rounded-full py-4 pl-12 pr-4 text-white placeholder-[#555] focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/50 transition-all font-medium" placeholder="Enter your full name" type="text"/>
             </div>
         </div>
 
         <div class="space-y-2">
             <label class="text-xs uppercase tracking-widest text-[#a0a0a0] font-bold ml-2">WhatsApp Number</label>
             <div class="flex gap-3">
-                <div class="relative bg-[#1a1a1a] border border-white/5 rounded-2xl flex items-center px-4 w-[110px] shrink-0 focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all cursor-pointer">
+                <div class="relative bg-[#1a1a1a] border border-white/5 rounded-full flex items-center px-4 w-[110px] shrink-0 focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all cursor-pointer">
                     <span class="text-xl mr-2" id="flagIcon">🇮🇳</span>
                     <span class="text-white font-medium" id="codeText">+91</span>
                     <select id="countryCode" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10">
@@ -67,13 +67,13 @@
                         <option value="+44" data-flag="🇬🇧">+44</option>
                     </select>
                 </div>
-                <div class="flex-1 bg-[#1a1a1a] border border-white/5 rounded-2xl focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all relative">
+                <div class="flex-1 bg-[#1a1a1a] border border-white/5 rounded-full focus-within:border-primary-container/50 focus-within:ring-1 focus-within:ring-primary-container/50 transition-all relative">
                     <input id="userPhone" required class="w-full bg-transparent py-4 px-4 text-white placeholder-[#555] focus:outline-none font-medium" placeholder="98765 43210" type="tel"/>
                 </div>
             </div>
         </div>
 
-        <button class="w-full py-4 mt-8 bg-white text-black rounded-2xl font-bold text-lg hover:bg-primary-container hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+        <button class="w-full py-4 mt-8 bg-white text-black rounded-full font-bold text-lg hover:bg-primary-container hover:shadow-[0_0_30px_rgba(0,255,136,0.4)] transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
             Initialize
             <span class="material-symbols-outlined text-xl">arrow_right_alt</span>
         </button>
@@ -122,7 +122,7 @@ function showToast(message, type = 'error') {
     const bg = isError ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-primary-container/10 border-primary-container/50 text-primary-container';
     const icon = isError ? 'error' : 'check_circle';
     
-    toast.className = `flex items-center gap-3 px-6 py-4 rounded-2xl border backdrop-blur-md shadow-2xl transform transition-all duration-300 translate-y-[-100%] opacity-0 ${bg}`;
+    toast.className = `flex items-center gap-3 px-6 py-4 rounded-full border backdrop-blur-md shadow-2xl transform transition-all duration-300 translate-y-[-100%] opacity-0 ${bg}`;
     toast.innerHTML = `<span class="material-symbols-outlined">${icon}</span><p class="font-bold text-sm">${message}</p>`;
     
     container.appendChild(toast);
@@ -139,5 +139,6 @@ function showToast(message, type = 'error') {
     }, 4000);
 }
 </script>
-\n</body>
+
+</body>
 </html>
