@@ -8,6 +8,7 @@ CREATE TABLE public.onboarding_profiles (
     name TEXT,
     phone TEXT,
     "fullName" TEXT,
+    age TEXT,
     "roleTitle" TEXT,
     "companyName" TEXT,
     industry TEXT,
@@ -38,4 +39,14 @@ WITH CHECK (auth.uid() = user_id);
 -- Allow users to read their own records
 CREATE POLICY "Users can read their own onboarding profile" 
 ON public.onboarding_profiles FOR SELECT 
+USING (auth.uid() = user_id);
+
+-- Allow users to update their own records
+CREATE POLICY "Users can update their own onboarding profile" 
+ON public.onboarding_profiles FOR UPDATE 
+USING (auth.uid() = user_id);
+
+-- Allow users to delete their own records
+CREATE POLICY "Users can delete their own onboarding profile" 
+ON public.onboarding_profiles FOR DELETE 
 USING (auth.uid() = user_id);

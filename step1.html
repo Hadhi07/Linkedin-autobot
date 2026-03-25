@@ -61,11 +61,15 @@
 <div class="space-y-10">
 <!-- Input Group: Identity -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-2">
+<div class="space-y-2 md:col-span-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Full Name</label>
 <input class="w-full bg-surface-container-lowest border border-outline-variant/10 focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim/20 rounded-lg py-4 px-5 text-on-surface transition-all outline-none" placeholder="e.g. Alexander Vance" type="text" id="fullName"/>
 </div>
-<div class="space-y-2">
+<div class="space-y-2 md:col-span-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Age</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/10 focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim/20 rounded-lg py-4 px-5 text-on-surface transition-all outline-none" placeholder="e.g. 35" type="text" id="age"/>
+</div>
+<div class="space-y-2 md:col-span-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Role/Title</label>
 <input class="w-full bg-surface-container-lowest border border-outline-variant/10 focus:border-primary-fixed-dim focus:ring-1 focus:ring-primary-fixed-dim/20 rounded-lg py-4 px-5 text-on-surface transition-all outline-none" placeholder="e.g. CEO &amp; Founder" type="text" id="roleTitle"/>
 </div>
@@ -104,6 +108,7 @@
 <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10">Hiring</button>
 <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10">Personal Brand Building</button>
 <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10">Business Growth</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/20 font-bold text-sm transition-all hover:bg-primary-container/10">Networking</button>
 </div>
 </div>
 </div>
@@ -146,6 +151,7 @@
 
   function saveStep1AndProceed() {
         const fullName = document.getElementById('fullName')?.value.trim() || '';
+        const age = document.getElementById('age')?.value.trim() || '';
         const roleTitle = document.getElementById('roleTitle')?.value.trim() || '';
         const companyName = document.getElementById('companyName')?.value.trim() || '';
         const industry = document.getElementById('industrySelect')?.value || '';
@@ -153,13 +159,14 @@
         const activeBtn = document.querySelector('#linkedinGoalBtns button.bg-primary-container');
         const linkedinGoal = activeBtn ? activeBtn.innerText : '';
 
-        if(!fullName || !roleTitle || !industry || !targetAudience || !linkedinGoal) {
+        if(!fullName || !age || !roleTitle || !industry || !targetAudience || !linkedinGoal) {
             showToast("Please complete all required fields vividly before advancing.");
             return;
         }
 
         const data = JSON.parse(localStorage.getItem('onboarding_data') || '{}');
         data.fullName = fullName;
+        data.age = age;
         data.roleTitle = roleTitle;
         data.companyName = companyName;
         data.industry = industry;
