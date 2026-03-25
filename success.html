@@ -78,14 +78,33 @@
       if (onboardingDataRaw) {
         const onboardingData = JSON.parse(onboardingDataRaw);
         
-        // Add user identifiers to payload
-        onboardingData.user_id = session.user.id;
-        if(session.user.email) onboardingData.email = session.user.email;
+        // Map to exact schema columns
+        const payload = {
+            user_id: session.user.id,
+            email: session.user.email,
+            name: onboardingData.name || null,
+            phone: onboardingData.phone || null,
+            "fullName": onboardingData.fullName || null,
+            "roleTitle": onboardingData.roleTitle || null,
+            "companyName": onboardingData.companyName || null,
+            industry: onboardingData.industry || null,
+            "targetAudience": onboardingData.targetAudience || null,
+            "linkedinGoal": onboardingData.linkedinGoal || null,
+            "writingStyle": onboardingData.writingStyle || null,
+            "sentenceStyle": onboardingData.sentenceStyle || null,
+            humor: onboardingData.humor || null,
+            topics: Array.isArray(onboardingData.interestedTopics) ? onboardingData.interestedTopics : null,
+            "voiceTranscript": onboardingData.voiceSample || null,
+            "industryMisconceptions": onboardingData.industryMisconceptions || null,
+            "hardestLesson": onboardingData.hardestLesson || null,
+            "disagreedBeliefs": onboardingData.disagreedBeliefs || null,
+            "toneCalibration": onboardingData.tone || null
+        };
         
         // Push data to table 'onboarding_profiles'
         const { error: insertError } = await supabase
           .from('onboarding_profiles')
-          .insert([onboardingData]);
+          .insert([payload]);
           
         if (insertError) {
           console.error('Error saving data:', insertError);
